@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include<string.h>
+
+
+typedef struct matriz{
+    int n;
+    int m;
+    int **elementos;
+}matriz;
+
+matriz mult(matriz a,matriz b){
+    //assumindo a e b matrizes quadradas
+    matriz x;
+    x.n = a.n;
+    x.m = b.m;
+    for(int i = 0;i < x.n;i++){
+        for(int j = 0;j < x.m;j++){
+            x.elementos[i] = 0;
+            for(int k = 0;k < x.n;k++){
+                x.elementos[i][j] += a.elementos[i][k] * b.elementos[k][j];
+            }
+        }
+
+    }
+    return x;
+}
+
+matriz adc(matriz a,matriz b){
+    matriz x;
+    x.n = a.n;
+    x.m = b.m;
+    for(int i = 0;i < x.n;i++){
+        for(int j = 0;j < x.m;j++){
+            x.elementos[i][j] = a.elementos[i][j] + b.elementos[i][j];
+        }
+    }
+    return x;
+}
+
+
+int main(){
+    /* \n;||(or) e &&(and)*/
+
+
+
+
+    return 0;
+
+}
